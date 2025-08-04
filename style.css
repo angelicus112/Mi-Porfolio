@@ -214,15 +214,17 @@ li{
 /* === PROYECTOS === */
 .proyectos-grid {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;                 /* Permite múltiples filas si no entran */
+  justify-content: center;         /* Centra horizontalmente */
+  align-items: center;             /* Centra verticalmente si es necesario */
   gap: 30px;
   margin-top: 40px;
+  padding: 0 20px;                 /* Espaciado lateral en pantallas pequeñas */
 }
 
 .proyecto-imagen {
   width: 90%;
-  max-width: 500px;
+  max-width: 320px;               /* Ajustalo al tamaño que desees */
   border-radius: 15px;
   background: white;
   padding: 10px;
@@ -392,5 +394,6 @@ footer p.footer-credit {
   font-size: 1.2rem;
   color: #2c3e50;
 }
+
 
 
