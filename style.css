@@ -220,6 +220,8 @@ li{
   gap: 30px;
   margin-top: 40px;
   padding: 0 20px;                 /* Espaciado lateral en pantallas pequeñas */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .proyecto-imagen {
@@ -237,6 +239,10 @@ li{
   transform: scale(1.03);
 }
 
+#projects {
+  max-width: 100% !important;
+  padding: 50px 10px;
+}
 /* === SKILLS === */
 .skills-cards {
   display: grid;
@@ -394,6 +400,7 @@ footer p.footer-credit {
   font-size: 1.2rem;
   color: #2c3e50;
 }
+
 
 
 
