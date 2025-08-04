@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reporte Técnico - Proyecto 1 - Banco Central QA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>📋 Proyecto 1: Informe Técnico - Sistema Bancario</h1>
+    <p>Simulación QA Funcional Manual - Banco Central QA</p>
+  </header>
+
+  <section>
+    <h2>1. Introducción</h2>
+    <p>Este informe detalla una simulación de pruebas funcionales manuales sobre un sistema bancario online, con foco en el módulo de login, transferencias y consulta de saldo.</p>
+  </section>
+
+  <section>
+    <h2>2. Objetivo</h2>
+    <p>Verificar que las funcionalidades principales del sistema respondan correctamente frente a distintas entradas, tanto válidas como inválidas.</p>
+  </section>
+
+  <section>
+    <h2>3. Alcance</h2>
+    <p>Las pruebas incluyeron únicamente el entorno web del sistema de clientes. No se testearon funcionalidades del homebanking mobile ni funcionalidades del backoffice.</p>
+  </section>
+
+  <section>
+    <h2>4. Requisitos funcionales</h2>
+    <ul>
+      <li>RF-01: El usuario debe poder iniciar sesión con credenciales válidas</li>
+      <li>RF-02: El sistema debe mostrar mensajes claros ante errores</li>
+      <li>RF-03: El usuario debe poder consultar su saldo</li>
+      <li>RF-04: El sistema debe permitir transferencias con validación previa</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Entorno de pruebas</h2>
+    <ul>
+      <li>Sistema operativo: Windows 10</li>
+      <li>Navegadores: Chrome 125, Firefox 118</li>
+      <li>Ambiente: https://qa-bancocentral.test</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. Herramientas utilizadas</h2>
+    <ul>
+      <li>Excel (para documentación de casos)</li>
+      <li>Postman (para validar API de login)</li>
+      <li>Capturas de pantalla (para evidencia visual)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>7. Casos de prueba</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Descripción</th>
+          <th>Pasos</th>
+          <th>Datos</th>
+          <th>Esperado</th>
+          <th>Resultado</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>TC001</td>
+          <td>Login exitoso</td>
+          <td>1. Ir al login<br>2. Ingresar usuario y clave válidos<br>3. Click en "Ingresar"</td>
+          <td>Usuario: testuser<br>Clave: 123456</td>
+          <td>Redirige a dashboard</td>
+          <td>Redirige a dashboard</td>
+          <td>✅ PASA</td>
+        </tr>
+        <tr>
+          <td>TC002</td>
+          <td>Login fallido</td>
+          <td>1. Ir al login<br>2. Ingresar clave errónea<br>3. Click en "Ingresar"</td>
+          <td>Usuario: testuser<br>Clave: incorrecta</td>
+          <td>Mostrar error "clave incorrecta"</td>
+          <td>Error genérico sin detalle</td>
+          <td>❌ FALLA</td>
+        </tr>
+        <tr>
+          <td>TC010</td>
+          <td>Transferencia interna</td>
+          <td>1. Iniciar sesión<br>2. Ingresar monto y CBU<br>3. Confirmar</td>
+          <td>CBU destino válido</td>
+          <td>Transferencia exitosa</td>
+          <td>Transferencia exitosa</td>
+          <td>✅ PASA</td>
+        </tr>
+        <tr>
+          <td>TC013</td>
+          <td>Saldo insuficiente</td>
+          <td>1. Ingresar monto superior al saldo<br>2. Confirmar</td>
+          <td>Saldo: $200<br>Monto: $500</td>
+          <td>Mostrar mensaje de saldo insuficiente</td>
+          <td>No se muestra mensaje, operación no se realiza</td>
+          <td>❌ FALLA</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>8. Incidencias encontradas</h2>
+    <ul>
+      <li>Bug 01: El mensaje de error por contraseña incorrecta no es específico</li>
+      <li>Bug 02: No se muestra mensaje ante saldo insuficiente</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>9. Conclusión</h2>
+    <p>El sistema respondió correctamente en los casos exitosos, pero se identificaron errores en la gestión de mensajes de error. Se recomienda mejorar el feedback al usuario en situaciones de error.</p>
+  </section>
+
+  <section>
+    <h2>10. Recomendaciones</h2>
+    <ul>
+      <li>Agregar mensajes de error detallados</li>
+      <li>Validar reglas de negocio antes de realizar operaciones</li>
+      <li>Probar el sistema en dispositivos móviles</li>
+    </ul>
+  </section>
+  <footer>
+    <p>&copy; 2025 Lautaro Martínez</p>
+  </footer>
+</body>
+</html>
