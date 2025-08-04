@@ -240,11 +240,11 @@ li{
   transform: scale(1.03);
 }
 
-#projects {
+/*#projects {
   max-width: 800px;
   margin: auto;
   padding: 50px 20px;
-}
+}*/
 
 /* === SKILLS === */
 .skills-cards {
@@ -403,3 +403,4 @@ footer p.footer-credit {
   font-size: 1.2rem;
   color: #2c3e50;
 }
+
