@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📍 Proyecto 5 - Mapa Interactivo</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🗺️ Mapa Interactivo con Python y Folium</h1>
+    <p>Visualización geográfica utilizando la librería <strong>Folium</strong> para Python.</p>
+  </header>
+
+  <section>
+    <h2>📌 Herramienta utilizada</h2>
+    <p>Este proyecto fue desarrollado con <strong>Python</strong> y la librería <a href="https://python-visualization.github.io/folium/" target="_blank">Folium</a>, que permite renderizar mapas interactivos utilizando Leaflet.js.</p>
+  </section>
+
+  <section>
+    <h2>⚙️ Código fuente</h2>
+    <pre><code class="codigo">
+#generar un mapa
+
+import folium
+
+def generar_mapa():
+    latitud = -34.4575
+    longitud = -58.7061
+
+    mapa = folium.Map(location=[latitud, longitud], zoom_start=13)
+
+    folium.Marker(
+        location = [latitud, longitud],
+        popup="Benavidez",
+        toolyip="Click para mas info",
+    ).add_to(mapa)
+
+    mapa.save("mapa.html")
+
+generar_mapa()
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>🧪 Resultado final</h2>
+    <p>A continuación podés visualizar el mapa generado en el proyecto:</p>
+    <div style="width:100%;height:400px;">
+      <iframe src="mapa python/mapa.html" width="100%" height="100%" style="border:none;"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Lautaro Martínez</p>
+  </footer>
+
+</body>
+</html>
